@@ -17,5 +17,9 @@ export const useFetch = (url, useMockWait) => {
 		})();
 	}, []);
 
-	return [items, items.length, items.length === 0];
+	return {
+		items,
+		itemTotal: items.length,
+		isLoading: items.length === 0
+	};
 };

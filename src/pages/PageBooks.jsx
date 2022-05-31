@@ -1,13 +1,13 @@
 import { useFetch } from '../hooks/useFetch';
 
 export const PageBooks = () => {
-	const [techBooks, totalBooks] = useFetch(
+	const {items: techBooks, itemTotal: totalBooks} = useFetch(
 		'https://edwardtanguay.netlify.app/share/techBooks.json'
 	);
-	const [employees, whatever, employeesAreLoading] = useFetch(
+	const {items: employees, isLoading: employeesAreLoading} = useFetch(
 		'https://edwardtanguay.netlify.app/share/employees.json', true
 	);
-	const [flashcards, totalFlashcards, flashcardsAreLoading] = useFetch(
+	const {itemTotal: totalFlashcards, isLoading: flashcardsAreLoading} = useFetch(
 		'https://edwardtanguay.netlify.app/share/flashcards.json',
 		true
 	);
