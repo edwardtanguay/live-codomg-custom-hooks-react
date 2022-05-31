@@ -3,6 +3,7 @@ import {useToggle} from '../hooks/useToggle';
 export const PageUseToggle = () => {
 	const [userIsOnline, toggleUserIsOnline] = useToggle(false);
 	const [layoutIsDark, toggleLayoutIsDark] = useToggle(true);
+	const [projectIsFinished, toggleProjectIsFinished] = useToggle(false);
 
 	return (
 		<>
@@ -30,6 +31,18 @@ export const PageUseToggle = () => {
 			</button>
 			<button onClick={() => toggleLayoutIsDark(true)}>set to dark</button>
 			<button onClick={() => toggleLayoutIsDark(false)}>set to light</button>
+
+			<hr/>
+			{projectIsFinished ? (
+				<p>Project is finished.</p>
+			) : (
+				<p>Project is not yet complete.</p>
+			)}
+			<button onClick={() => toggleProjectIsFinished()}>
+			Change project status
+			</button>
+			<button onClick={() => toggleProjectIsFinished(true)}>mark as finished</button>
+			<button onClick={() => toggleProjectIsFinished(false)}>mark as NOT finished</button>
 		</>
 	);
 };
