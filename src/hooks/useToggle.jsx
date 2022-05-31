@@ -1,6 +1,9 @@
-export const useToggle = (state) => {
+import { useState } from 'react';
+
+export const useToggle = (_value) => {
+	const [value, setValue] = useState(_value);
 	const func = () => {
 		console.log('in the func');
 	}
-	return [false, func ]
+	return [value, func ]
 };
