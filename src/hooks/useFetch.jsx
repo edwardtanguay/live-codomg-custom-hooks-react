@@ -10,5 +10,5 @@ export const useFetch = (url) => {
 		})();
 	}, []);
 
-	return [items];
+	return [items, items.length];
 };
