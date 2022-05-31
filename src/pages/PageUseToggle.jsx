@@ -1,3 +1,5 @@
+import {useToggle} from '../hooks/useToggle';
+
 export const PageUseToggle = () => {
 	const [userIsOnline, toggleUserIsOnline] = useToggle(false);
 
