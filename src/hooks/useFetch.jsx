@@ -1,4 +1,14 @@
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
 export const useFetch = (url) => {
-	const items = ['dfdsf', 'sdfdf', 'sdfdf'];
+	const [items, setItems] = useState([]);
+
+	useEffect(() => {
+		(async () => {
+			setItems((await axios.get(url)).data);
+		})();
+	}, []);
+
 	return [items];
 };
